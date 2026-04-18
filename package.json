@@ -1,0 +1,26 @@
+{
+  "name": "student-feedback-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reshmayadav40/Student-Feedback-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reshmayadav40/Student-Feedback-App/issues"
+  },
+  "homepage": "https://github.com/reshmayadav40/Student-Feedback-App#readme",
+  "dependencies": {
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.6"
+  }
+}

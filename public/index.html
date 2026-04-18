@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Feedback Manager</title>
+  <!-- <link rel="icon" href="favicon.ico"> -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Student Feedback Manager</h1>
+
+    <div class="nav">
+      <button id="showFormBtn">Submit Feedback</button>
+      <button id="showListBtn">View All Feedback</button>
+    </div>
+
+    <!-- Feedback Form Page -->
+    <section id="formPage">
+      <h2>Submit Feedback</h2>
+
+      <form id="feedbackForm">
+        <input type="text" id="name" placeholder="Student Name" required />
+
+        <select id="rating" required>
+          <option value="">Select Rating</option>
+          <option value="1">1 - Very Poor</option>
+          <option value="2">2 - Poor</option>
+          <option value="3">3 - Good</option>
+          <option value="4">4 - Very Good</option>
+          <option value="5">5 - Excellent</option>
+        </select>
+
+        <textarea id="comment" placeholder="Your feedback..." required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <p id="msg"></p>
+    </section>
+
+    <!-- All Feedback Page -->
+    <section id="listPage" class="hidden">
+      <h2>All Student Feedback</h2>
+      <div id="feedbackList"></div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
