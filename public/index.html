@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <title>Student Feedback Manager</title>
-  <!-- <link rel="icon" href="favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div class="container">
 
-    <h1>Student Feedback Manager</h1>
+    <h1><i class="fa-solid fa-graduation-cap"></i> Student Feedback Manager</h1>
 
     <div class="nav">
-      <button id="showFormBtn">Submit Feedback</button>
-      <button id="showListBtn">View All Feedback</button>
+      <button id="showFormBtn" class="active"><i class="fa-solid fa-pen-to-square"></i> Submit Feedback</button>
+      <button id="showListBtn"><i class="fa-solid fa-list"></i> View All Feedback</button>
     </div>
 
     <!-- Feedback Form Page -->
@@ -22,20 +23,29 @@
       <h2>Submit Feedback</h2>
 
       <form id="feedbackForm">
-        <input type="text" id="name" placeholder="Student Name" required />
+        <div class="input-group">
+          <label for="name">Student Name</label>
+          <input type="text" id="name" placeholder="Enter your full name" required />
+        </div>
 
-        <select id="rating" required>
-          <option value="">Select Rating</option>
-          <option value="1">1 - Very Poor</option>
-          <option value="2">2 - Poor</option>
-          <option value="3">3 - Good</option>
-          <option value="4">4 - Very Good</option>
-          <option value="5">5 - Excellent</option>
-        </select>
+        <div class="input-group">
+          <label for="rating">Rating</label>
+          <select id="rating" required>
+            <option value="" disabled selected>Select Rating</option>
+            <option value="1">1 - Very Poor 😞</option>
+            <option value="2">2 - Poor 😕</option>
+            <option value="3">3 - Good 😐</option>
+            <option value="4">4 - Very Good 🙂</option>
+            <option value="5">5 - Excellent 🤩</option>
+          </select>
+        </div>
 
-        <textarea id="comment" placeholder="Your feedback..." required></textarea>
+        <div class="input-group">
+          <label for="comment">Feedback</label>
+          <textarea id="comment" placeholder="Share your thoughts..." required></textarea>
+        </div>
 
-        <button type="submit">Submit</button>
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i> Submit Feedback</button>
       </form>
 
       <p id="msg"></p>

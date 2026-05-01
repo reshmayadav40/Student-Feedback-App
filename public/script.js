@@ -15,11 +15,15 @@ const feedbackList = document.getElementById("feedbackList");
 showFormBtn.addEventListener("click", () => {
   formPage.classList.remove("hidden");
   listPage.classList.add("hidden");
+  showFormBtn.classList.add("active");
+  showListBtn.classList.remove("active");
 });
 
 showListBtn.addEventListener("click", () => {
   formPage.classList.add("hidden");
   listPage.classList.remove("hidden");
+  showListBtn.classList.add("active");
+  showFormBtn.classList.remove("active");
   loadFeedback();
 });
 
@@ -49,7 +53,11 @@ form.addEventListener("submit", async (e) => {
   }
 
   const data = await res.json();
-  msg.textContent = data.message || "Saved";
+  msg.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${data.message || "Feedback submitted successfully!"}`;
+  
+  setTimeout(() => {
+    msg.innerHTML = "";
+  }, 3000);
 
   form.reset();
 });
@@ -81,12 +89,15 @@ async function loadFeedback() {
     div.className = "card";
 
     div.innerHTML = `
-      <h4>${f.name} (⭐ ${f.rating})</h4>
-      <p>${f.comment}</p>
+      <h4>
+        <span class="student-name"><i class="fa-solid fa-user"></i> ${f.name}</span>
+        <span class="rating-badge"><i class="fa-solid fa-star"></i> ${f.rating}/5</span>
+      </h4>
+      <p><i class="fa-solid fa-quote-left" style="opacity: 0.3; margin-right: 8px;"></i>${f.comment}</p>
 
-      <div style="margin-top:8px;">
-        <button class="editBtn">Edit</button>
-        <button class="deleteBtn">Delete</button>
+      <div class="actions">
+        <button class="editBtn"><i class="fa-solid fa-pen"></i> Edit</button>
+        <button class="deleteBtn"><i class="fa-solid fa-trash"></i> Delete</button>
       </div>
     `;
 
