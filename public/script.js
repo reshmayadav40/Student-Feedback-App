@@ -37,7 +37,7 @@ form.addEventListener("submit", async (e) => {
   const rating = Number(document.getElementById("rating").value);
   const comment = document.getElementById("comment").value;
 
-  const res = await fetch("/api/feedback", {
+  const res = await fetch("https://student-feedback-app-umkg.onrender.com/api/feedback", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -68,7 +68,7 @@ form.addEventListener("submit", async (e) => {
 async function loadFeedback() {
   feedbackList.innerHTML = "Loading...";
 
-  const res = await fetch("/api/feedback");
+  const res = await fetch("https://student-feedback-app-umkg.onrender.com/api/feedback");
   
   if (!res.ok) {
     feedbackList.innerHTML = `<p style="color:red">Error loading feedback: ${res.status} ${res.statusText}</p>`;
@@ -108,7 +108,7 @@ async function loadFeedback() {
       const ok = confirm("Are you sure you want to delete?");
       if (!ok) return;
 
-      await fetch(`/api/feedback/${f._id}`, {
+      await fetch(`https://student-feedback-app-umkg.onrender.com/api/feedback/${f._id}`, {
         method: "DELETE",
       });
 
@@ -128,7 +128,7 @@ async function loadFeedback() {
       const newComment = prompt("Edit comment", f.comment);
       if (newComment === null) return;
 
-      await fetch(`/api/feedback/${f._id}`, {
+      await fetch(`https://student-feedback-app-umkg.onrender.com/api/feedback/${f._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

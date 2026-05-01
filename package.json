@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/reshmayadav40/Student-Feedback-App#readme",
   "dependencies": {
+    "cors": "^2.8.6",
     "dotenv": "^17.2.4",
     "express": "^5.2.1",
     "mongoose": "^9.1.6"
